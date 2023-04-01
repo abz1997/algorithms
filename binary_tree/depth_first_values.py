@@ -46,10 +46,15 @@ stack so now stack = [c,b]. We remove 'b' then check right and left of 'b' and a
 so stack = [c,e,d]. We remove 'd' and as that has no children, we then remove 'e' which also has no children. 
 We then remove 'c' from stack and check what is right which is 'f' so stack = [f]. There is nothing left of 'c'.
 We then remove 'f' and then stop because now len(stack) < 0. '''
-            
+
+# n = no of nodes
+# time : O(n) we only visit each node once 
+# space : O(n) we aren't storing more than n items in stack  
+
 # depth_first_values(a)
 
 # recursive method
+# under the hood recursive methods use stacks
 def depth_first_values_recursive(root):
     if root == None:
         return []
