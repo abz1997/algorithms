@@ -65,6 +65,8 @@ def depth_first_values_recursive(root):
     # print(f'right value = {right_values}')
     return [root.value, *left_values, *right_values] # unpacking operator '*' allows us to add to list without square brackets
 
+# this is a stack under the hood as e is the last one to enter left_values but is the first to returned in root.value 
+
 print(depth_first_values_recursive(a))
 
         #      a
