@@ -24,3 +24,29 @@ c.right = f
 
 
 # question: find min value in binary tree
+
+def recursive(root):
+    if not root:
+        return float('inf')
+    x = recursive(root.left)
+    y = recursive(root.right)
+    return min([root.values, x, y])
+
+print(recursive(a)) 
+
+def iterative(root):
+    queue = [root]
+    smallest = float('inf')
+
+    while len(queue) > 0:
+        current = queue.pop(0)
+        if current.values < smallest:
+            smallest = current.values
+        if current.left:
+            queue.append(current.left)
+        if current.right:
+            queue.append(current.right)
+
+    return smallest
+
+print(iterative(a))
